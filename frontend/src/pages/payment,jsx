@@ -1,8 +1,31 @@
+import PaymentMethod from "../components/PaymentMethod";
+import "../css/payment.css";
+
 function Payment() {
   return (
-    <div>
-      <h1>Payment Page</h1>
-      <p>Select your payment method</p>
+    <div className="payment-page">
+      <h1>Secure Payment</h1>
+
+      <div className="payment-container">
+
+        <div className="payment-box">
+          <h2>Choose Payment Method</h2>
+
+          <PaymentMethod />
+        </div>
+
+        <div className="order-summary">
+          <h2>Order Summary</h2>
+
+          <p>Product Total: ₹2,000</p>
+          <p>Delivery Fee: ₹50</p>
+
+          <hr />
+
+          <h3>Total Amount: ₹2,050</h3>
+        </div>
+
+      </div>
     </div>
   );
 }

@@ -1,0 +1,403 @@
+/* ================================
+   PAYMENT PAGE
+================================ */
+
+.payment-page {
+  min-height: 100vh;
+  background: skyblue;
+  padding: 30px 6%;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #212121;
+}
+
+/* Page heading */
+
+.payment-page > h1 {
+  max-width: 1200px;
+  margin: 0 auto 25px;
+  font-size: 28px;
+  font-weight: 600;
+}
+
+
+/* ================================
+   MAIN CONTAINER
+================================ */
+
+.payment-container {
+  max-width: 1200px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 20px;
+  align-items: start;
+}
+
+
+/* ================================
+   PAYMENT BOX
+================================ */
+
+.payment-box {
+  background: #ffffff;
+  border-radius: 4px;
+  border: 1px solid #e0e0e0;
+  overflow: hidden;
+}
+
+.payment-box > h2 {
+  margin: 0;
+  padding: 20px 25px;
+  border-bottom: 1px solid #eeeeee;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+
+/* ================================
+   PAYMENT METHODS
+================================ */
+
+.payment-method {
+  padding: 20px 25px;
+}
+
+.method-options {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.method-options label {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  padding: 17px 18px;
+
+  background: #ffffff;
+  border: 1px solid #dddddd;
+  border-radius: 4px;
+
+  font-size: 16px;
+  font-weight: 500;
+
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.method-options label:hover {
+  border-color: #2874f0;
+  background: #f8fbff;
+}
+
+.method-options input {
+  width: 17px;
+  height: 17px;
+  accent-color: #2874f0;
+}
+
+
+/* ================================
+   PAYMENT FORM
+================================ */
+
+.payment-form {
+  margin-top: 20px;
+}
+
+.payment-option {
+  padding: 22px;
+  background: #fafafa;
+  border: 1px solid #e0e0e0;
+  border-radius: 4px;
+}
+
+.payment-option h3 {
+  margin: 0 0 20px;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+
+/* Labels */
+
+.payment-option label {
+  display: block;
+  margin-bottom: 7px;
+  margin-top: 14px;
+
+  font-size: 14px;
+  font-weight: 600;
+  color: #424242;
+}
+
+
+/* Inputs */
+
+.payment-option input,
+.payment-option select {
+  width: 100%;
+  box-sizing: border-box;
+
+  padding: 13px 14px;
+
+  border: 1px solid #cfcfcf;
+  border-radius: 3px;
+
+  background: #ffffff;
+
+  font-size: 14px;
+  outline: none;
+
+  transition: 0.2s;
+}
+
+.payment-option input:focus,
+.payment-option select:focus {
+  border-color: #2874f0;
+  box-shadow: 0 0 0 2px rgba(40, 116, 240, 0.08);
+}
+
+
+/* ================================
+   PAYMENT BUTTON
+================================ */
+
+.payment-option button,
+.success-box button {
+  width: 100%;
+
+  margin-top: 22px;
+
+  padding: 14px 20px;
+
+  border: none;
+  border-radius: 3px;
+
+  background: #2874f0;
+  color: white;
+
+  font-size: 15px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition: 0.2s ease;
+}
+
+.payment-option button:hover,
+.success-box button:hover {
+  background: #1769d3;
+}
+
+
+/* ================================
+   CARD DETAILS
+================================ */
+
+.card-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+}
+
+.card-row > div {
+  display: flex;
+  flex-direction: column;
+}
+
+
+/* ================================
+   PAYMENT MESSAGE
+================================ */
+
+.payment-message {
+  margin-top: 15px;
+  padding: 12px;
+
+  border-radius: 3px;
+
+  background: #e8f5e9;
+  color: #1b5e20;
+
+  font-size: 14px;
+  font-weight: 600;
+}
+
+
+/* ================================
+   ORDER SUMMARY
+================================ */
+
+.order-summary {
+  background: #ffffff;
+
+  border: 1px solid #e0e0e0;
+  border-radius: 4px;
+
+  overflow: hidden;
+
+  position: sticky;
+  top: 20px;
+}
+
+.order-summary h2 {
+  margin: 0;
+  padding: 20px;
+
+  border-bottom: 1px solid #eeeeee;
+
+  font-size: 18px;
+  color: #878787;
+
+  text-transform: uppercase;
+}
+
+.order-summary p {
+  display: flex;
+  justify-content: space-between;
+
+  padding: 0 20px;
+
+  font-size: 15px;
+  color: #555;
+}
+
+.order-summary hr {
+  border: none;
+  border-top: 1px dashed #cccccc;
+  margin: 20px;
+}
+
+.order-summary h3 {
+  display: flex;
+  justify-content: space-between;
+
+  margin: 0;
+  padding: 0 20px 22px;
+
+  font-size: 18px;
+  color: #212121;
+}
+
+
+/* ================================
+   COD
+================================ */
+
+.payment-option p {
+  color: #555;
+  line-height: 1.6;
+  font-size: 14px;
+}
+
+
+/* ================================
+   SUCCESS PAGE
+================================ */
+
+.success-page {
+  min-height: 100vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background: #f1f3f6;
+
+  padding: 30px;
+}
+
+.success-box {
+  width: 420px;
+  max-width: 100%;
+
+  padding: 45px 35px;
+
+  text-align: center;
+
+  background: white;
+
+  border-radius: 6px;
+
+  border: 1px solid #e0e0e0;
+
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+}
+
+.success-icon {
+  width: 70px;
+  height: 70px;
+
+  margin: auto;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  border-radius: 50%;
+
+  background: #e8f5e9;
+  color: #2e7d32;
+
+  font-size: 42px;
+  font-weight: bold;
+}
+
+.success-box h1 {
+  margin: 20px 0 10px;
+
+  font-size: 25px;
+}
+
+.success-box p {
+  color: #666;
+  font-size: 14px;
+}
+
+.success-box strong {
+  color: #212121;
+}
+
+
+/* ================================
+   MOBILE RESPONSIVE
+================================ */
+
+@media (max-width: 768px) {
+
+  .payment-page {
+    padding: 20px 12px;
+  }
+
+  .payment-page > h1 {
+    font-size: 22px;
+  }
+
+  .payment-container {
+    grid-template-columns: 1fr;
+  }
+
+  .order-summary {
+    position: static;
+    order: -1;
+  }
+
+  .payment-box > h2 {
+    padding: 17px;
+    font-size: 18px;
+  }
+
+  .payment-method {
+    padding: 15px;
+  }
+
+  .payment-option {
+    padding: 17px;
+  }
+
+  .card-row {
+    grid-template-columns: 1fr;
+  }
+}

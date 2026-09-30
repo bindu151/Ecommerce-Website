@@ -1,51 +1,374 @@
+/* ================================
+   SEARCH & FILTER PAGE
+================================ */
+
 .filter-page {
-  padding: 30px;
+  min-height: 100vh;
+  padding: 30px 50px;
+  background: #f5f6f8;
+  font-family: Arial, sans-serif;
+  color: #222;
 }
 
-.search-bar {
-  display: flex;
-  gap: 10px;
+/* Page Heading */
+
+.filter-page h1 {
+  font-size: 28px;
   margin-bottom: 25px;
 }
 
+/* ================================
+   SEARCH BAR
+================================ */
+
+.search-bar {
+  display: flex;
+  align-items: center;
+  max-width: 800px;
+  margin-bottom: 30px;
+  background: white;
+  border-radius: 8px;
+  padding: 6px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
 .search-bar input {
-  width: 400px;
-  padding: 12px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
+  flex: 1;
+  padding: 14px 16px;
+  border: none;
+  outline: none;
+  font-size: 15px;
+  background: transparent;
+}
+
+.search-bar input::placeholder {
+  color: #999;
 }
 
 .search-bar button {
-  padding: 12px 20px;
+  padding: 13px 28px;
   border: none;
-  border-radius: 5px;
+  border-radius: 6px;
+  background: #2874f0;
+  color: white;
+  font-size: 15px;
+  font-weight: bold;
   cursor: pointer;
 }
 
-.filter-layout {
-  display: flex;
-  gap: 30px;
+.search-bar button:hover {
+  background: #1258c7;
 }
 
+/* ================================
+   MAIN LAYOUT
+================================ */
+
+.filter-layout {
+  display: grid;
+  grid-template-columns: 240px 1fr;
+  gap: 25px;
+  align-items: start;
+}
+
+/* ================================
+   FILTER SIDEBAR
+================================ */
+
 .filter-sidebar {
-  width: 220px;
-  padding: 20px;
-  border: 1px solid #ddd;
+  width: auto;
+  background: white;
+  padding: 22px;
   border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.filter-sidebar h2 {
+  margin-top: 0;
+  padding-bottom: 15px;
+  border-bottom: 1px solid #eee;
+  font-size: 20px;
 }
 
 .filter-sidebar h3 {
-  margin-top: 20px;
+  margin-top: 22px;
+  margin-bottom: 10px;
+  font-size: 15px;
+  color: #444;
 }
 
 .filter-sidebar select {
   width: 100%;
-  padding: 10px;
+  padding: 11px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  background: white;
+  cursor: pointer;
+  outline: none;
 }
 
+.filter-sidebar select:focus {
+  border-color: #2874f0;
+}
+
+/* ================================
+   RESULTS SECTION
+================================ */
+
 .filter-results {
-  flex: 1;
-  padding: 20px;
-  border: 1px solid #ddd;
+  background: white;
+  padding: 25px;
   border-radius: 8px;
+  min-height: 400px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.results-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 18px;
+  border-bottom: 1px solid #eee;
+  margin-bottom: 20px;
+}
+
+.results-header h2 {
+  margin: 0;
+  font-size: 20px;
+}
+
+.results-count {
+  color: #777;
+  font-size: 14px;
+}
+
+/* ================================
+   SORTING
+================================ */
+
+.sort-section {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.sort-section label {
+  font-size: 14px;
+  color: #555;
+}
+
+.sort-section select {
+  padding: 8px 12px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  background: white;
+  cursor: pointer;
+}
+
+/* ================================
+   PRODUCT GRID
+================================ */
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+/* ================================
+   PRODUCT CARD
+================================ */
+
+.search-product-card {
+  background: white;
+  border: 1px solid #eee;
+  border-radius: 8px;
+  overflow: hidden;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+.search-product-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
+}
+
+/* Product Image */
+
+.search-product-image {
+  height: 190px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f8f8f8;
+  position: relative;
+}
+
+.search-product-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+/* Discount Badge */
+
+.discount-badge {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background: #008c45;
+  color: white;
+  padding: 5px 9px;
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+/* Product Information */
+
+.search-product-info {
+  padding: 15px;
+}
+
+.search-product-info h3 {
+  margin: 0 0 8px;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.product-description {
+  font-size: 13px;
+  color: #777;
+  margin-bottom: 10px;
+}
+
+/* Rating */
+
+.product-rating {
+  display: inline-block;
+  background: #388e3c;
+  color: white;
+  padding: 4px 7px;
+  border-radius: 4px;
+  font-size: 12px;
+  margin-bottom: 10px;
+}
+
+/* Price */
+
+.product-price {
+  font-size: 19px;
+  font-weight: bold;
+  color: #222;
+}
+
+.old-price {
+  margin-left: 8px;
+  color: #999;
+  text-decoration: line-through;
+  font-size: 14px;
+}
+
+.discount-text {
+  margin-left: 8px;
+  color: #008c45;
+  font-size: 13px;
+  font-weight: bold;
+}
+
+/* ================================
+   VIEW PRODUCT BUTTON
+================================ */
+
+.view-product-btn {
+  width: 100%;
+  margin-top: 12px;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  background: #2874f0;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.view-product-btn:hover {
+  background: #1258c7;
+}
+
+/* ================================
+   CLEAR FILTER BUTTON
+================================ */
+
+.clear-filter {
+  width: 100%;
+  margin-top: 20px;
+  padding: 10px;
+  border: 1px solid #2874f0;
+  border-radius: 5px;
+  background: white;
+  color: #2874f0;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.clear-filter:hover {
+  background: #f0f6ff;
+}
+
+/* ================================
+   NO RESULTS
+================================ */
+
+.no-results {
+  text-align: center;
+  padding: 70px 20px;
+  color: #777;
+}
+
+.no-results h3 {
+  color: #333;
+  margin-bottom: 8px;
+}
+
+/* ================================
+   RESPONSIVE DESIGN
+================================ */
+
+@media (max-width: 1000px) {
+
+  .filter-page {
+    padding: 25px;
+  }
+
+  .product-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+}
+
+@media (max-width: 700px) {
+
+  .filter-page {
+    padding: 15px;
+  }
+
+  .filter-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .search-bar {
+    max-width: 100%;
+  }
+
+  .product-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .results-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+  }
+
 }

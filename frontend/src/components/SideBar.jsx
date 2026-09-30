@@ -1,5 +1,3 @@
-import React from "react";
-
 function Sidebar({ setCategory, setPriceRange }) {
   return (
     <aside className="filter-sidebar">

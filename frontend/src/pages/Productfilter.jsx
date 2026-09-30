@@ -1,51 +1,83 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import SearchBar from "../components/SearchBar";
-import Sidebar from "../components/SideBar";
+import SideBar from "../components/SideBar";
 import "../css/search.css";
 
 function ProductFilter() {
+
   const [searchTerm, setSearchTerm] = useState("");
   const [category, setCategory] = useState("All");
   const [priceRange, setPriceRange] = useState("All");
 
   return (
-    <div className="filter-page">
+    <div className="filter-results">
 
-      <h1>Search & Filter Products</h1>
+  <div className="results-header">
+    <div>
+      <h2>Products</h2>
+      <span className="results-count">24 products found</span>
+    </div>
 
-      <SearchBar
-        searchTerm={searchTerm}
-        setSearchTerm={setSearchTerm}
-      />
+    <div className="sort-section">
+      <label>Sort by:</label>
 
-      <div className="filter-layout">
+      <select>
+        <option>Relevance</option>
+        <option>Price: Low to High</option>
+        <option>Price: High to Low</option>
+        <option>Customer Rating</option>
+      </select>
+    </div>
+  </div>
 
-        <Sidebar
-          setCategory={setCategory}
-          setPriceRange={setPriceRange}
+  <div className="product-grid">
+
+    <div className="search-product-card">
+
+      <div className="search-product-image">
+        <span className="discount-badge">20% OFF</span>
+
+        <img
+          src="/images/product1.jpg"
+          alt="Product"
         />
+      </div>
 
-        <div className="filter-results">
+      <div className="search-product-info">
 
-          <h2>Product Results</h2>
+        <h3>Wireless Headphones</h3>
 
-          <p>
-            Search: {searchTerm || "All Products"}
-          </p>
+        <p className="product-description">
+          Bluetooth wireless headphones
+        </p>
 
-          <p>
-            Category: {category}
-          </p>
+        <span className="product-rating">
+          ★ 4.3
+        </span>
 
-          <p>
-            Price: {priceRange}
-          </p>
+        <p>
+          <span className="product-price">₹1,599</span>
 
-        </div>
+          <span className="old-price">
+            ₹1,999
+          </span>
+
+          <span className="discount-text">
+            20% off
+          </span>
+        </p>
+
+        <button className="view-product-btn">
+          View Product
+        </button>
 
       </div>
 
     </div>
+
+  </div>
+
+</div>
   );
 }
 

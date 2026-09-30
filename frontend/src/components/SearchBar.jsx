@@ -10,7 +10,7 @@ function SearchBar({ searchTerm, setSearchTerm }) {
         onChange={(e) => setSearchTerm(e.target.value)}
       />
 
-      <button>🔍</button>
+      <button>Search</button>
     </div>
   );
 }

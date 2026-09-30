@@ -1,25 +1,30 @@
-function SideBar({ onCategory }) {
+import React from "react";
+
+function Sidebar({ setCategory, setPriceRange }) {
   return (
-    <aside>
-      <h3>Categories</h3>
+    <aside className="filter-sidebar">
+      <h2>Filters</h2>
 
-      <button onClick={() => onCategory("All")}>
-        All Products
-      </button>
+      <h3>Category</h3>
 
-      <button onClick={() => onCategory("Electronics")}>
-        Electronics
-      </button>
+      <select onChange={(e) => setCategory(e.target.value)}>
+        <option value="All">All</option>
+        <option value="Electronics">Electronics</option>
+        <option value="Fashion">Fashion</option>
+        <option value="Home">Home</option>
+        <option value="Books">Books</option>
+      </select>
 
-      <button onClick={() => onCategory("Fashion")}>
-        Clothing
-      </button>
+      <h3>Price</h3>
 
-      <button onClick={() => onCategory("Books")}>
-        Books
-      </button>
+      <select onChange={(e) => setPriceRange(e.target.value)}>
+        <option value="All">All</option>
+        <option value="0-1000">Below ₹1,000</option>
+        <option value="1000-5000">₹1,000 - ₹5,000</option>
+        <option value="5000-50000">₹5,000 - ₹50,000</option>
+      </select>
     </aside>
   );
 }
 
-export default SideBar;
+export default Sidebar;

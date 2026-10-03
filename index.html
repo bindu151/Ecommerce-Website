@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seller Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="dashboard">
+
+        <h1>Seller Dashboard</h1>
+
+        <div class="cards">
+            <div class="card">
+                <h2>Products</h2>
+                <p id="totalProducts">0</p>
+            </div>
+            <div class="card">
+                <h2>Total Stock</h2>
+                <p id="totalStock">0</p>
+            </div>
+            <div class="card">
+                <h2>Total Value</h2>
+                <p id="totalValue">₹0</p>
+            </div>
+        </div>
+
+        <h2>Add Product</h2>
+
+        <form id="productForm">
+
+            <input type="text" id="productName" placeholder="Product Name" required>
+
+            <select id="productCategory" required>
+                <option value="">Select Category</option>
+                <option value="Electronics">Electronics</option>
+                <option value="Clothing">Clothing</option>
+                <option value="Food">Food</option>
+                <option value="Books">Books</option>
+                <option value="Other">Other</option>
+            </select>
+
+            <input type="number" id="productPrice" placeholder="Price" min="0" required>
+
+            <input type="number" id="productStock" placeholder="Stock" min="0" required>
+
+            <input type="file" id="productPhoto" accept="image/*">
+
+            <button type="submit">Add Product</button>
+
+        </form>
+
+        <input type="text" id="search" placeholder="Search products...">
+
+        <h2>My Products</h2>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Photo</th>
+                    <th>Name</th>
+                    <th>Category</th>
+                    <th>Price</th>
+                    <th>Stock</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody id="productTable"></tbody>
+        </table>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -11,6 +11,8 @@ const authMiddleware = require("./src/middleware/authMiddleware");
 const cartRoutes = require("./src/routes/cartRoutes");
 const orderRoutes = require("./src/routes/orderRoutes");
 const adminRoutes = require("./src/routes/adminRoutes");
+const sellerRoutes = require("./src/routes/sellerRoutes");
+const paymentRoutes = require("./src/routes/paymentRoutes");
 
 const app = express();
 
@@ -33,6 +35,8 @@ app.get("/api/auth-test", authMiddleware, (req, res) => {
 
 app.use("/api/cart", cartRoutes);
 app.use("/api/admin", adminRoutes);
+app.use("/api/sellers", sellerRoutes);
+app.use("/api/payments", paymentRoutes);
 
 
 // Test route

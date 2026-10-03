@@ -1,10 +1,11 @@
+
 const express = require("express");
 const router = express.Router();
 
 const authMiddleware = require("../middleware/authMiddleware");
 const requireRole = require("../middleware/roleMiddleware");
 
-// Temporary dashboard route for testing access control
+// Admin dashboard - only authenticated ADMIN users can access
 router.get(
   "/dashboard",
   authMiddleware,
@@ -12,6 +13,7 @@ router.get(
   (req, res) => {
     res.json({
       message: "Admin dashboard access successful",
+      admin: req.user
     });
   }
 );

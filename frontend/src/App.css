@@ -1,184 +1,651 @@
-.counter {
-  font-size: 16px;
-  padding: 5px 10px;
-  border-radius: 5px;
-  color: var(--accent);
-  background: var(--accent-bg);
-  border: 2px solid transparent;
-  transition: border-color 0.3s;
-  margin-bottom: 24px;
-
-  &:hover {
-    border-color: var(--accent-border);
-  }
-  &:focus-visible {
-    outline: 2px solid var(--accent);
-    outline-offset: 2px;
-  }
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
-.hero {
-  position: relative;
-
-  .base,
-  .framework,
-  .vite {
-    inset-inline: 0;
-    margin: 0 auto;
-  }
-
-  .base {
-    width: 170px;
-    position: relative;
-    z-index: 0;
-  }
-
-  .framework,
-  .vite {
-    position: absolute;
-  }
-
-  .framework {
-    z-index: 1;
-    top: 34px;
-    height: 28px;
-    transform: perspective(2000px) rotateZ(300deg) rotateX(44deg) rotateY(39deg)
-      scale(1.4);
-  }
-
-  .vite {
-    z-index: 0;
-    top: 107px;
-    height: 26px;
-    width: auto;
-    transform: perspective(2000px) rotateZ(300deg) rotateX(40deg) rotateY(39deg)
-      scale(0.8);
-  }
+html,
+body,
+#root {
+  width: 100%;
+  height: 100%;
 }
 
-#center {
+body {
+  font-family: Arial, sans-serif;
+  background: #ffffff;
+  overflow: hidden;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+/* =========================
+   MAIN PAGE
+   ========================= */
+
+.auth-page {
+  width: 100%;
+  height: 100vh;
+  min-height: 600px;
+  display: flex;
+  overflow: hidden;
+}
+
+/* =========================
+   LEFT SIDE
+   ========================= */
+
+.left-panel {
+  width: 55%;
+  height: 100vh;
+  min-height: 600px;
+
+  padding: clamp(30px, 5vh, 55px)
+           clamp(35px, 4vw, 65px);
+
+  background: linear-gradient(
+    145deg,
+    #087cff,
+    #4969ff,
+    #b84dff,
+    #ff4f91
+  );
+
+  color: white;
+  overflow: hidden;
+}
+
+/* ShopEase */
+
+.brand-name {
+  font-size: clamp(30px, 3vw, 40px);
+  font-weight: 700;
+  line-height: 1.1;
+  margin-bottom: 5px;
+}
+
+.brand-name span {
+  color: #ff9bd5;
+}
+
+/* Better Products */
+
+.brand-tagline {
+  font-size: clamp(15px, 1.4vw, 19px);
+  color: rgba(255, 255, 255, 0.9);
+  margin-bottom: clamp(30px, 5vh, 55px);
+}
+
+/* BIG LEFT HEADING */
+
+.left-panel h1 {
+  font-size: clamp(48px, 5vw, 72px);
+  line-height: 1.03;
+  font-weight: 700;
+  color: white;
+  margin-bottom: clamp(20px, 3vh, 30px);
+}
+
+.left-panel h1 span {
+  color: #ff9bd5;
+}
+
+/* LEFT DESCRIPTION */
+
+.left-description {
+  font-size: clamp(16px, 1.5vw, 20px);
+  line-height: 1.5;
+  color: rgba(255, 255, 255, 0.92);
+  margin-bottom: clamp(25px, 4vh, 40px);
+}
+
+/* FEATURES */
+
+.features {
   display: flex;
   flex-direction: column;
-  gap: 25px;
-  place-content: center;
-  place-items: center;
-  flex-grow: 1;
-
-  @media (max-width: 1024px) {
-    padding: 32px 20px 24px;
-    gap: 18px;
-  }
+  gap: clamp(14px, 2vh, 22px);
 }
 
-#next-steps {
+.feature-item {
   display: flex;
-  border-top: 1px solid var(--border);
-  text-align: left;
-
-  & > div {
-    flex: 1 1 0;
-    padding: 32px;
-    @media (max-width: 1024px) {
-      padding: 24px 20px;
-    }
-  }
-
-  .icon {
-    margin-bottom: 16px;
-    width: 22px;
-    height: 22px;
-  }
-
-  @media (max-width: 1024px) {
-    flex-direction: column;
-    text-align: center;
-  }
+  align-items: center;
+  gap: 14px;
 }
 
-#docs {
-  border-right: 1px solid var(--border);
+.feature-icon {
+  width: 46px;
+  height: 46px;
+  min-width: 46px;
 
-  @media (max-width: 1024px) {
-    border-right: none;
-    border-bottom: 1px solid var(--border);
-  }
-}
+  border-radius: 50%;
 
-#next-steps ul {
-  list-style: none;
-  padding: 0;
   display: flex;
-  gap: 8px;
-  margin: 32px 0 0;
+  align-items: center;
+  justify-content: center;
 
-  .logo {
-    height: 18px;
-  }
+  font-size: 21px;
 
-  a {
-    color: var(--text-h);
-    font-size: 16px;
-    border-radius: 6px;
-    background: var(--social-bg);
-    display: flex;
-    padding: 6px 12px;
-    align-items: center;
-    gap: 8px;
-    text-decoration: none;
-    transition: box-shadow 0.3s;
-
-    &:hover {
-      box-shadow: var(--shadow);
-    }
-    .button-icon {
-      height: 18px;
-      width: 18px;
-    }
-  }
-
-  @media (max-width: 1024px) {
-    margin-top: 20px;
-    flex-wrap: wrap;
-    justify-content: center;
-
-    li {
-      flex: 1 1 calc(50% - 8px);
-    }
-
-    a {
-      width: 100%;
-      justify-content: center;
-      box-sizing: border-box;
-    }
-  }
+  background: rgba(255, 255, 255, 0.16);
 }
 
-#spacer {
-  height: 88px;
-  border-top: 1px solid var(--border);
-  @media (max-width: 1024px) {
-    height: 48px;
-  }
+.feature-item b {
+  display: block;
+  font-size: clamp(16px, 1.4vw, 19px);
+  line-height: 1.2;
+  margin-bottom: 4px;
 }
 
-.ticks {
-  position: relative;
+.feature-item p {
+  font-size: clamp(13px, 1.1vw, 16px);
+  line-height: 1.2;
+  color: rgba(255, 255, 255, 0.75);
+}
+
+/* =========================
+   RIGHT SIDE
+   ========================= */
+
+.right-panel {
+  width: 45%;
+  height: 100vh;
+  min-height: 600px;
+
+  padding: clamp(25px, 5vh, 55px)
+           clamp(30px, 4vw, 60px);
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  overflow: hidden;
+}
+
+/* LOGIN / REGISTER */
+
+.top-buttons {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 25px;
+}
+
+.top-buttons button {
+  border: none;
+  background: transparent;
+  padding: 10px 24px;
+
+  font-size: 38px;
+  font-family: Arial, sans-serif;
+  font-weight:600;
+
+
+
+  cursor: pointer;
+  border-radius: 25px;
+}
+
+.top-buttons .active-tab {
+  color: white;
+  background: linear-gradient(
+    90deg,
+    #147ee8,
+    #bd4aa8
+  );
+}
+
+/* NEW USER */
+
+.new-user-text {
+  color: #777;
+  font-size: 15px;
+  margin-bottom: 20px;
+}
+
+/* RIGHT HEADING */
+
+.right-panel h2 {
+  color: #15245e;
+  font-size: clamp(32px, 3vw, 44px);
+  line-height: 1.15;
+  margin-bottom: 12px;
+}
+
+/* SUBTITLE */
+
+.subtitle {
+  color: #777;
+  font-size: 16px;
+  line-height: 1.5;
+  margin-bottom: 22px;
+}
+
+/* INPUTS */
+
+.right-panel > input {
   width: 100%;
+  height: 50px;
 
-  &::before,
-  &::after {
-    content: '';
-    position: absolute;
-    top: -4.5px;
-    border: 5px solid transparent;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+
+  padding: 0 16px;
+
+  font-size: 16px;
+
+  margin-bottom: 14px;
+
+  outline: none;
+}
+
+.right-panel > input:focus {
+  border-color: #527cff;
+}
+
+/* REMEMBER */
+
+.remember {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  margin: 4px 0 20px;
+
+  color: #666;
+
+  font-size: 14px;
+}
+
+.remember label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.remember input {
+  width: 17px;
+  height: 17px;
+}
+
+.forgot {
+  border: none;
+  background: transparent;
+
+  color: #555;
+
+  font-size: 14px;
+
+  cursor: pointer;
+}
+
+/* SIGN IN */
+
+.sign-in {
+  width: 100%;
+  height: 52px;
+
+  border: none;
+  border-radius: 10px;
+
+  background: linear-gradient(
+    90deg,
+    #147ee8,
+    #bd4aa8
+  );
+
+  color: white;
+
+  font-size: 16px;
+  font-weight: bold;
+
+  cursor: pointer;
+}
+
+/* OR */
+
+.or {
+  text-align: center;
+  margin: 18px 0;
+  color: #777;
+  font-size: 14px;
+}
+
+/* SOCIAL BUTTONS */
+
+.social-btn {
+  width: 100%;
+  height: 48px;
+
+  background: white;
+
+  border: 1px solid #ddd;
+  border-radius: 10px;
+
+  margin-bottom: 12px;
+
+  font-size: 15px;
+
+  cursor: pointer;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 10px;
+}
+
+/* GOOGLE ICON */
+
+.google-icon {
+  width: 21px;
+  height: 21px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.google-icon svg {
+  width: 20px;
+  height: 20px;
+  display: block;
+}
+
+/* OTP ICON */
+
+.otp-icon {
+  width: 21px;
+  height: 21px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.otp-icon svg {
+  width: 20px;
+  height: 20px;
+  display: block;
+}
+
+/* CREATE ACCOUNT */
+
+.create-text {
+  text-align: center;
+
+  color: #777;
+
+  margin-top: 12px;
+  margin-bottom: 7px;
+
+  font-size: 14px;
+}
+
+.create-btn {
+  align-self: center;
+
+  border: none;
+  background: transparent;
+
+  color: #3977dd;
+
+  font-size: 15px;
+  font-weight: bold;
+
+  cursor: pointer;
+}
+
+/* =========================
+   LAPTOP HEIGHT
+   ========================= */
+
+@media (max-height: 750px) and (min-width: 901px) {
+
+  .left-panel {
+    padding-top: 25px;
+    padding-bottom: 20px;
   }
 
-  &::before {
-    left: 0;
-    border-left-color: var(--border);
+  .brand-tagline {
+    margin-bottom: 25px;
   }
-  &::after {
-    right: 0;
-    border-right-color: var(--border);
+
+  .left-panel h1 {
+    font-size: 52px;
+    margin-bottom: 18px;
   }
+
+  .left-description {
+    font-size: 17px;
+    margin-bottom: 22px;
+  }
+
+  .features {
+    gap: 10px;
+  }
+
+  .feature-icon {
+    width: 38px;
+    height: 38px;
+    min-width: 38px;
+    font-size: 17px;
+  }
+
+  .feature-item b {
+    font-size: 16px;
+  }
+
+  .feature-item p {
+    font-size: 13px;
+  }
+
+  .right-panel {
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+}
+
+/* =========================
+   SMALL LAPTOP
+   ========================= */
+
+@media (min-width: 701px) and (max-width: 1000px) {
+
+  .left-panel {
+    width: 52%;
+    padding-left: 30px;
+    padding-right: 25px;
+  }
+
+  .right-panel {
+    width: 48%;
+    padding-left: 25px;
+    padding-right: 25px;
+  }
+
+  .left-panel h1 {
+    font-size: 43px;
+  }
+
+  .left-description {
+    font-size: 15px;
+  }
+
+  .feature-item b {
+    font-size: 15px;
+  }
+
+  .feature-item p {
+    font-size: 12px;
+  }
+}
+
+/* =========================
+   MOBILE
+   ========================= */
+
+@media (max-width: 700px) {
+
+  body {
+    overflow: auto;
+  }
+
+  .auth-page {
+    height: auto;
+    min-height: 100vh;
+    flex-direction: column;
+    overflow: visible;
+  }
+
+  .left-panel {
+    width: 100%;
+    height: auto;
+    min-height: auto;
+    padding: 35px 25px;
+  }
+
+  .left-panel h1 {
+    font-size: 44px;
+  }
+
+  .right-panel {
+    width: 100%;
+    height: auto;
+    min-height: auto;
+    padding: 35px 25px;
+    overflow: visible;
+  }
+}
+{/* LEFT SIDE */}
+<div className="left-panel">
+
+  <div className="brand-name">
+    Shop<span>Ease</span>
+  </div>
+
+  <p className="brand-tagline">
+    Better Products • Happier You
+  </p>
+
+  <h1 className="left-main-title">
+    Shop Smarter,
+    <br />
+    <span>Live Better</span>
+  </h1>
+
+  <p className="left-description">
+    Discover amazing products, great deals
+    <br />
+    and a seamless shopping experience —
+    <br />
+    all in one place.
+  </p>
+
+  <div className="feature-item">
+    <div className="feature-icon">🚚</div>
+    <div>
+      <b>Fast & Reliable Delivery</b>
+      <p>Your order, on time</p>
+    </div>
+  </div>
+
+  <div className="feature-item">
+    <div className="feature-icon">🛡️</div>
+    <div>
+      <b>Secure Payments</b>
+      <p>Shop with confidence</p>
+    </div>
+  </div>
+
+  <div className="feature-item">
+    <div className="feature-icon">★</div>
+    <div>
+      <b>Personalized for You</b>
+      <p>Because you're unique</p>
+    </div>
+  </div>
+
+</div>
+/* LEFT PANEL - CONTENT EMPHASIS */
+
+.left-panel {
+  min-height: 100vh;
+  box-sizing: border-box;
+}
+
+.left-panel .left-description {
+  font-size: 20px !important;
+  line-height: 1.5 !important;
+  color: #e8f1ff !important;
+}
+
+.left-panel .feature-item b {
+  font-size: 20px !important;
+  color: #ffffff !important;
+}
+
+.left-panel .feature-item p {
+  font-size: 16px !important;
+  color: #c9dcff !important;
+}
+
+/* FINAL LEFT SIDE SPACING FIX */
+
+.left-panel {
+  min-height: 100vh !important;
+}
+
+.left-panel .left-description {
+  margin-bottom: 55px !important;
+}
+
+.left-panel .feature-item {
+  min-height: 90px !important;
+  margin-bottom: 35px !important;
+  display: flex !important;
+  align-items: center !important;
+}
+
+.left-panel .feature-item b {
+  font-size: 24px !important;
+  color: #ffffff !important;
+}
+
+.left-panel .feature-item p {
+  font-size: 18px !important;
+  color: #e6e6e6 !important;
+  margin-top: 8px !important;
+}
+
+.left-panel .feature-item .feature-icon {
+  width: 55px !important;
+  height: 55px !important;
+  flex-shrink: 0 !important;
+}
+
+.left-panel .feature-item:nth-of-type(1) .feature-icon {
+  background: #ff9f43 !important;
+}
+
+.left-panel .feature-item:nth-of-type(2) .feature-icon {
+  background: #2ecc71 !important;
+}
+
+.left-panel .feature-item:nth-of-type(3) .feature-icon {
+  background: #f39c12 !important;
+}
+
+.left-panel .left-main-title {
+  color: #000000 !important;
+}
+BB.left-panel .brand-name {
+  color: #000000 !important;
+}
+.left-panel .brand-name {
+  color: #000000 !important;
+}
+
+.left-panel .brand-name span {
+  color: #e88bb5 !important;
 }

@@ -1,3 +1,4 @@
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -8,56 +9,36 @@ html,
 body,
 #root {
   width: 100%;
-  height: 100%;
+  min-height: 100%;
 }
 
 body {
   font-family: Arial, sans-serif;
   background: #ffffff;
-  overflow: hidden;
 }
 
 #root {
   min-height: 100vh;
 }
 
-/* =========================
-   MAIN PAGE
-   ========================= */
+/* MAIN AUTHENTICATION PAGE */
 
 .auth-page {
   width: 100%;
-  height: 100vh;
-  min-height: 600px;
+  min-height: 100vh;
   display: flex;
   overflow: hidden;
 }
 
-/* =========================
-   LEFT SIDE
-   ========================= */
+/* LEFT PANEL */
 
 .left-panel {
   width: 55%;
-  height: 100vh;
-  min-height: 600px;
-
-  padding: clamp(30px, 5vh, 55px)
-           clamp(35px, 4vw, 65px);
-
-  background: linear-gradient(
-    145deg,
-    #087cff,
-    #4969ff,
-    #b84dff,
-    #ff4f91
-  );
-
+  min-height: 100vh;
+  padding: clamp(30px, 5vh, 55px) clamp(35px, 4vw, 65px);
+  background: linear-gradient(145deg, #087cff, #4969ff, #b84dff, #ff4f91);
   color: white;
-  overflow: hidden;
 }
-
-/* ShopEase */
 
 .brand-name {
   font-size: clamp(30px, 3vw, 40px);
@@ -70,43 +51,35 @@ body {
   color: #ff9bd5;
 }
 
-/* Better Products */
-
 .brand-tagline {
   font-size: clamp(15px, 1.4vw, 19px);
   color: rgba(255, 255, 255, 0.9);
   margin-bottom: clamp(30px, 5vh, 55px);
 }
 
-/* BIG LEFT HEADING */
-
 .left-panel h1 {
-  font-size: clamp(48px, 5vw, 72px);
+  font-size: clamp(42px, 5vw, 72px);
   line-height: 1.03;
   font-weight: 700;
   color: white;
-  margin-bottom: clamp(20px, 3vh, 30px);
+  margin-bottom: 25px;
 }
 
 .left-panel h1 span {
   color: #ff9bd5;
 }
 
-/* LEFT DESCRIPTION */
-
 .left-description {
   font-size: clamp(16px, 1.5vw, 20px);
   line-height: 1.5;
   color: rgba(255, 255, 255, 0.92);
-  margin-bottom: clamp(25px, 4vh, 40px);
+  margin-bottom: 35px;
 }
-
-/* FEATURES */
 
 .features {
   display: flex;
   flex-direction: column;
-  gap: clamp(14px, 2vh, 22px);
+  gap: 22px;
 }
 
 .feature-item {
@@ -119,15 +92,11 @@ body {
   width: 46px;
   height: 46px;
   min-width: 46px;
-
   border-radius: 50%;
-
   display: flex;
   align-items: center;
   justify-content: center;
-
   font-size: 21px;
-
   background: rgba(255, 255, 255, 0.16);
 }
 
@@ -136,233 +105,188 @@ body {
   font-size: clamp(16px, 1.4vw, 19px);
   line-height: 1.2;
   margin-bottom: 4px;
+  color: #ffffff;
 }
 
 .feature-item p {
   font-size: clamp(13px, 1.1vw, 16px);
-  line-height: 1.2;
-  color: rgba(255, 255, 255, 0.75);
+  line-height: 1.4;
+  color: rgba(255, 255, 255, 0.85);
 }
 
-/* =========================
-   RIGHT SIDE
-   ========================= */
+/* RIGHT PANEL */
 
 .right-panel {
   width: 45%;
-  height: 100vh;
-  min-height: 600px;
-
-  padding: clamp(25px, 5vh, 55px)
-           clamp(30px, 4vw, 60px);
-
+  min-height: 100vh;
+  padding: clamp(25px, 5vh, 55px) clamp(30px, 4vw, 60px);
   display: flex;
   flex-direction: column;
   justify-content: center;
-
-  overflow: hidden;
+  overflow-y: auto;
 }
 
-/* LOGIN / REGISTER */
+/* LOGIN AND REGISTER FORM */
 
-.top-buttons {
-  display: flex;
-  gap: 15px;
-  margin-bottom: 25px;
+.form-container {
+  width: 100%;
+  max-width: 480px;
+  margin: 0 auto;
 }
-
-.top-buttons button {
-  border: none;
-  background: transparent;
-  padding: 10px 24px;
-
-  font-size: 38px;
-  font-family: Arial, sans-serif;
-  font-weight:600;
-
-
-
-  cursor: pointer;
-  border-radius: 25px;
-}
-
-.top-buttons .active-tab {
-  color: white;
-  background: linear-gradient(
-    90deg,
-    #147ee8,
-    #bd4aa8
-  );
-}
-
-/* NEW USER */
 
 .new-user-text {
-  color: #777;
+  color: #777777;
   font-size: 15px;
+  line-height: 1.5;
   margin-bottom: 20px;
 }
 
-/* RIGHT HEADING */
-
-.right-panel h2 {
+.form-container h1,
+.form-container h2 {
   color: #15245e;
-  font-size: clamp(32px, 3vw, 44px);
+  font-size: clamp(30px, 3vw, 42px);
   line-height: 1.15;
   margin-bottom: 12px;
 }
 
-/* SUBTITLE */
-
 .subtitle {
-  color: #777;
+  color: #777777;
   font-size: 16px;
   line-height: 1.5;
   margin-bottom: 22px;
 }
 
-/* INPUTS */
+/* FORM INPUTS */
 
-.right-panel > input {
+.form-container form > input,
+.form-container > input {
+  display: block;
   width: 100%;
   height: 50px;
-
-  border: 1px solid #ddd;
+  border: 1px solid #dddddd;
   border-radius: 10px;
-
   padding: 0 16px;
-
   font-size: 16px;
-
   margin-bottom: 14px;
-
   outline: none;
+  background: #ffffff;
 }
 
-.right-panel > input:focus {
+.form-container input:focus {
   border-color: #527cff;
 }
 
-/* REMEMBER */
+/* REMEMBER ME AND FORGOT PASSWORD */
 
+.remember-row,
 .remember {
   display: flex;
   justify-content: space-between;
   align-items: center;
-
+  gap: 10px;
   margin: 4px 0 20px;
-
-  color: #666;
-
+  color: #666666;
   font-size: 14px;
 }
 
+.remember-row label,
 .remember label {
   display: flex;
   align-items: center;
   gap: 8px;
 }
 
-.remember input {
+.remember-row input[type="checkbox"],
+.remember input[type="checkbox"] {
   width: 17px;
   height: 17px;
+  accent-color: #3977dd;
 }
 
+.forgot-btn,
 .forgot {
   border: none;
   background: transparent;
-
-  color: #555;
-
+  color: #555555;
   font-size: 14px;
-
   cursor: pointer;
 }
 
-/* SIGN IN */
+/* SIGN IN BUTTON */
 
+.sign-in-btn,
 .sign-in {
   width: 100%;
-  height: 52px;
-
+  min-height: 52px;
   border: none;
   border-radius: 10px;
-
-  background: linear-gradient(
-    90deg,
-    #147ee8,
-    #bd4aa8
-  );
-
-  color: white;
-
+  background: linear-gradient(90deg, #147ee8, #bd4aa8);
+  color: #ffffff;
   font-size: 16px;
   font-weight: bold;
-
   cursor: pointer;
 }
 
-/* OR */
+.sign-in-btn:hover,
+.sign-in:hover {
+  opacity: 0.92;
+}
 
+/* OR DIVIDER */
+
+.or-divider,
 .or {
-  text-align: center;
-  margin: 18px 0;
-  color: #777;
-  font-size: 14px;
-}
-
-/* SOCIAL BUTTONS */
-
-.social-btn {
-  width: 100%;
-  height: 48px;
-
-  background: white;
-
-  border: 1px solid #ddd;
-  border-radius: 10px;
-
-  margin-bottom: 12px;
-
-  font-size: 15px;
-
-  cursor: pointer;
-
   display: flex;
   align-items: center;
   justify-content: center;
+  gap: 12px;
+  text-align: center;
+  margin: 20px 0;
+  color: #777777;
+  font-size: 14px;
+}
 
+.or-divider::before,
+.or-divider::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: #e2e2e2;
+}
+
+/* GOOGLE AND OTP BUTTONS */
+
+.social-btn {
+  width: 100%;
+  min-height: 48px;
+  background: #ffffff;
+  border: 1px solid #dddddd;
+  border-radius: 10px;
+  margin-bottom: 12px;
+  padding: 10px 14px;
+  font-size: 15px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   gap: 10px;
 }
 
-/* GOOGLE ICON */
-
-.google-icon {
-  width: 21px;
-  height: 21px;
-
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
+.social-btn:hover {
+  background: #f8f8fb;
 }
 
-.google-icon svg {
-  width: 20px;
-  height: 20px;
-  display: block;
-}
-
-/* OTP ICON */
-
+.google-icon,
 .otp-icon {
   width: 21px;
   height: 21px;
-
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  flex-shrink: 0;
 }
 
+.google-icon svg,
 .otp-icon svg {
   width: 20px;
   height: 20px;
@@ -371,37 +295,46 @@ body {
 
 /* CREATE ACCOUNT */
 
+.create-account {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  margin-top: 16px;
+  color: #777777;
+  font-size: 14px;
+  text-align: center;
+}
+
 .create-text {
   text-align: center;
-
-  color: #777;
-
+  color: #777777;
   margin-top: 12px;
   margin-bottom: 7px;
-
   font-size: 14px;
 }
 
+.create-account button,
 .create-btn {
-  align-self: center;
-
   border: none;
   background: transparent;
-
   color: #3977dd;
-
   font-size: 15px;
   font-weight: bold;
-
   cursor: pointer;
 }
 
-/* =========================
-   LAPTOP HEIGHT
-   ========================= */
+/* GENERAL BUTTONS */
+
+.form-container button:focus-visible {
+  outline: 2px solid #527cff;
+  outline-offset: 3px;
+}
+
+/* LAPTOP HEIGHT */
 
 @media (max-height: 750px) and (min-width: 901px) {
-
   .left-panel {
     padding-top: 25px;
     padding-bottom: 20px;
@@ -422,7 +355,7 @@ body {
   }
 
   .features {
-    gap: 10px;
+    gap: 12px;
   }
 
   .feature-icon {
@@ -439,19 +372,11 @@ body {
   .feature-item p {
     font-size: 13px;
   }
-
-  .right-panel {
-    padding-top: 20px;
-    padding-bottom: 20px;
-  }
 }
 
-/* =========================
-   SMALL LAPTOP
-   ========================= */
+/* SMALL LAPTOP AND TABLET */
 
 @media (min-width: 701px) and (max-width: 1000px) {
-
   .left-panel {
     width: 52%;
     padding-left: 30px;
@@ -479,173 +404,57 @@ body {
   .feature-item p {
     font-size: 12px;
   }
+
+  .form-container h1,
+  .form-container h2 {
+    font-size: 32px;
+  }
 }
 
-/* =========================
-   MOBILE
-   ========================= */
+/* MOBILE */
 
 @media (max-width: 700px) {
-
   body {
     overflow: auto;
   }
 
   .auth-page {
-    height: auto;
     min-height: 100vh;
+    height: auto;
     flex-direction: column;
     overflow: visible;
   }
 
   .left-panel {
     width: 100%;
-    height: auto;
     min-height: auto;
-    padding: 35px 25px;
+    padding: 30px 25px;
+  }
+
+  .brand-tagline {
+    margin-bottom: 30px;
   }
 
   .left-panel h1 {
-    font-size: 44px;
+    font-size: 42px;
+  }
+
+  .left-description {
+    margin-bottom: 25px;
+  }
+
+  .features {
+    gap: 16px;
   }
 
   .right-panel {
     width: 100%;
-    height: auto;
     min-height: auto;
     padding: 35px 25px;
     overflow: visible;
   }
-}
-{/* LEFT SIDE */}
-<div className="left-panel">
 
-  <div className="brand-name">
-    Shop<span>Ease</span>
-  </div>
-
-  <p className="brand-tagline">
-    Better Products • Happier You
-  </p>
-
-  <h1 className="left-main-title">
-    Shop Smarter,
-    <br />
-    <span>Live Better</span>
-  </h1>
-
-  <p className="left-description">
-    Discover amazing products, great deals
-    <br />
-    and a seamless shopping experience —
-    <br />
-    all in one place.
-  </p>
-
-  <div className="feature-item">
-    <div className="feature-icon">🚚</div>
-    <div>
-      <b>Fast & Reliable Delivery</b>
-      <p>Your order, on time</p>
-    </div>
-  </div>
-
-  <div className="feature-item">
-    <div className="feature-icon">🛡️</div>
-    <div>
-      <b>Secure Payments</b>
-      <p>Shop with confidence</p>
-    </div>
-  </div>
-
-  <div className="feature-item">
-    <div className="feature-icon">★</div>
-    <div>
-      <b>Personalized for You</b>
-      <p>Because you're unique</p>
-    </div>
-  </div>
-
-</div>
-/* LEFT PANEL - CONTENT EMPHASIS */
-
-.left-panel {
-  min-height: 100vh;
-  box-sizing: border-box;
-}
-
-.left-panel .left-description {
-  font-size: 20px !important;
-  line-height: 1.5 !important;
-  color: #e8f1ff !important;
-}
-
-.left-panel .feature-item b {
-  font-size: 20px !important;
-  color: #ffffff !important;
-}
-
-.left-panel .feature-item p {
-  font-size: 16px !important;
-  color: #c9dcff !important;
-}
-
-/* FINAL LEFT SIDE SPACING FIX */
-
-.left-panel {
-  min-height: 100vh !important;
-}
-
-.left-panel .left-description {
-  margin-bottom: 55px !important;
-}
-
-.left-panel .feature-item {
-  min-height: 90px !important;
-  margin-bottom: 35px !important;
-  display: flex !important;
-  align-items: center !important;
-}
-
-.left-panel .feature-item b {
-  font-size: 24px !important;
-  color: #ffffff !important;
-}
-
-.left-panel .feature-item p {
-  font-size: 18px !important;
-  color: #e6e6e6 !important;
-  margin-top: 8px !important;
-}
-
-.left-panel .feature-item .feature-icon {
-  width: 55px !important;
-  height: 55px !important;
-  flex-shrink: 0 !important;
-}
-
-.left-panel .feature-item:nth-of-type(1) .feature-icon {
-  background: #ff9f43 !important;
-}
-
-.left-panel .feature-item:nth-of-type(2) .feature-icon {
-  background: #2ecc71 !important;
-}
-
-.left-panel .feature-item:nth-of-type(3) .feature-icon {
-  background: #f39c12 !important;
-}
-
-.left-panel .left-main-title {
-  color: #000000 !important;
-}
-BB.left-panel .brand-name {
-  color: #000000 !important;
-}
-.left-panel .brand-name {
-  color: #000000 !important;
-}
-
-.left-panel .brand-name span {
-  color: #e88bb5 !important;
+  .form-container {
+    max-width: 100%;
+  }
 }

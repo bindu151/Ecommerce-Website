@@ -1,5 +1,6 @@
 import { Routes, Route } from "react-router-dom";
 
+import AuthPage from "../pages/AuthPage";
 import Products from "../pages/Products";
 import ProductDetails from "../pages/ProductDetails";
 import Payment from "../pages/payment";
@@ -18,6 +19,8 @@ import AdminReports from "../pages/admin/AdminReports";
 function AppRoutes() {
   return (
     <Routes>
+
+      <Route path="/login" element={<AuthPage />} />
 
       {/* Existing Ecommerce routes */}
       <Route path="/products" element={<Products />} />

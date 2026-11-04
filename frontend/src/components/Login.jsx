@@ -60,10 +60,10 @@
           required
         />
 
-        <input
-          type="password"
-          placeholder="Enter your password"
-          required
+        <input type="password" 
+        name="password" 
+        placeholder="Enter your password" 
+        required 
         />
 
         <div className="remember-row">

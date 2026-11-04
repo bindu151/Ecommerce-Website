@@ -289,10 +289,6 @@ function Home() {
           </div>
         </section>
       </main>
-
-      <footer style={styles.footer}>
-        © {new Date().getFullYear()} ShopEase · Better Products, Happier You
-      </footer>
     </div>
   );
 }

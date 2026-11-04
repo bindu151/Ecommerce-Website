@@ -1,14 +1,17 @@
+
+import { Link } from "react-router-dom";
 import "../css/navbar.css";
 
 function Navbar() {
   return (
     <nav>
-      <h2>ShopEasy</h2>
+      <h2>ShopEase</h2>
 
       <div>
-        <a href="/">Home</a>
-        <a href="/products">Products</a>
-        <a href="/cart">Cart</a>
+        <Link to="/">Home</Link>
+        <Link to="/products">Products</Link>
+        <Link to="/cart">Cart</Link>
+        <Link to="/login">Login / Register</Link>
       </div>
     </nav>
   );

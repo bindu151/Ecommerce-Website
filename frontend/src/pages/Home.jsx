@@ -185,23 +185,6 @@ function Home() {
 
   return (
     <div style={styles.page}>
-      <nav style={styles.navbar}>
-        <h2 style={styles.logo}>
-          Shop<span style={{ color: "#d95baf" }}>Ease</span>
-        </h2>
-        <div style={styles.links}>
-          <button style={styles.navButton} onClick={() => navigate("/login")}>
-            Login / Register
-          </button>
-          <button
-            style={{ ...styles.navButton, background: "#8739e9", color: "#fff" }}
-            onClick={() => navigate("/products")}
-          >
-            Shop Now
-          </button>
-        </div>
-      </nav>
-
       <main>
         <section style={styles.hero}>
           <div style={styles.content}>

@@ -1,0 +1,119 @@
+
+/* Seller Login and Registration Pages */
+.seller-auth-page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 30px 16px;
+  box-sizing: border-box;
+  background: linear-gradient(135deg, #eff6ff, #f8fafc, #dbeafe);
+  font-family: Arial, sans-serif;
+}
+
+.seller-auth-card {
+  width: 100%;
+  max-width: 430px;
+  box-sizing: border-box;
+  padding: 35px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  background: white;
+  border: 1px solid #e2e8f0;
+  border-radius: 16px;
+  box-shadow: 0 12px 35px rgba(30, 58, 138, 0.12);
+}
+
+.seller-auth-card h1 {
+  margin: 0;
+  color: #1e3a8a;
+  font-size: 27px;
+  text-align: center;
+}
+
+.seller-auth-card > p {
+  margin: 0 0 12px;
+  color: #64748b;
+  line-height: 1.5;
+  text-align: center;
+}
+
+.seller-auth-card label {
+  margin-top: 5px;
+  color: #334155;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.seller-auth-card input {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 13px;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  background: #fff;
+  font-size: 15px;
+  outline: none;
+}
+
+.seller-auth-card input:focus {
+  border-color: #2563eb;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.12);
+}
+
+.seller-auth-card button {
+  margin-top: 12px;
+  padding: 14px;
+  border: none;
+  border-radius: 8px;
+  background: #2563eb;
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.seller-auth-card button:hover {
+  background: #1d4ed8;
+}
+
+.seller-auth-card .seller-auth-message {
+  margin: 5px 0;
+  color: #dc2626;
+  font-size: 14px;
+  text-align: center;
+}
+
+.seller-auth-card .seller-auth-footer {
+  margin: 12px 0 0;
+  color: #475569;
+  font-size: 14px;
+}
+
+.seller-auth-card a {
+  color: #2563eb;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.seller-auth-card a:hover {
+  text-decoration: underline;
+}
+
+.seller-auth-card .seller-auth-back {
+  margin-top: 5px;
+  color: #64748b;
+  font-size: 14px;
+  text-align: center;
+}
+
+@media (max-width: 480px) {
+  .seller-auth-card {
+    padding: 24px 20px;
+  }
+
+  .seller-auth-card h1 {
+    font-size: 23px;
+  }
+}

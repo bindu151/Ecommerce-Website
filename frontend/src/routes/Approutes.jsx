@@ -10,8 +10,14 @@ import ProductFilter from "../pages/Productfilter";
 import Cart from "../Cart";
 import Checkout from "../Checkout";
 
+import SellerDashboard from "../pages/SellerDashboard";
+import SellerLogin from "../pages/SellerLogin";
+import SellerRegister from "../pages/SellerRegister";
+
+
 // Admin
 import AdminLayout from "../components/admin/AdminLayout";
+import AdminRegister from "../pages/admin/AdminRegister";
 import AdminLogin from "../pages/admin/AdminLogin";
 import AdminDashboard from "../pages/admin/AdminDashboard";
 import AdminUsers from "../pages/admin/AdminUsers";
@@ -29,6 +35,10 @@ function AppRoutes() {
 
       {/* Existing Ecommerce routes */}
       <Route path="/products" element={<Products />} />
+      <Route path="/seller/dashboard" element={<SellerDashboard />} />
+      
+      <Route path="/seller/login" element={<SellerLogin />} />
+      <Route path="/seller/register" element={<SellerRegister />} />
 
       <Route
         path="/products/:id"
@@ -44,6 +54,7 @@ function AppRoutes() {
 
       {/* Admin Login */}
       <Route path="/admin/login" element={<AdminLogin />} />
+      <Route path="/admin/register" element={<AdminRegister />} />
 
       {/* Admin Layout */}
       <Route path="/admin" element={<AdminLayout />}>

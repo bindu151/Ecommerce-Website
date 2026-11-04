@@ -324,3 +324,141 @@
     grid-template-columns: 1fr;
   }
 }
+
+
+/* ADMIN LOGIN PAGE */
+
+.login-page {
+  max-width: 400px;
+  margin: 80px auto;
+  padding: 30px;
+  background-color: white;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.login-page h1 {
+  margin-bottom: 25px;
+  text-align: center;
+  color: #0f172a;
+}
+
+.login-page input {
+  display: block;
+  width: 100%;
+  box-sizing: border-box;
+  margin-bottom: 18px;
+  padding: 12px;
+  border: 1px solid #cbd5e1;
+  border-radius: 6px;
+  font-size: 15px;
+}
+
+.login-page button {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 6px;
+  background-color: #2563eb;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.login-page button:hover {
+  background-color: #1d4ed8;
+}
+
+
+/* Admin Login and Registration Pages */
+
+.login-page {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 30px 16px;
+  box-sizing: border-box;
+  background: linear-gradient(135deg, #eff6ff, #dbeafe, #f8fafc);
+  font-family: Arial, sans-serif;
+}
+
+.login-page form {
+  width: 100%;
+  max-width: 420px;
+  box-sizing: border-box;
+  padding: 35px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 14px;
+  box-shadow: 0 10px 30px rgba(30, 58, 138, 0.12);
+}
+
+.login-page h1 {
+  margin: 0 0 10px;
+  color: #1e3a8a;
+  font-size: 27px;
+  text-align: center;
+}
+
+.login-page input {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 13px;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  font-size: 15px;
+  outline: none;
+}
+
+.login-page input:focus {
+  border-color: #2563eb;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.12);
+}
+
+.login-page button {
+  padding: 13px;
+  border: none;
+  border-radius: 8px;
+  background: #2563eb;
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.login-page button:hover {
+  background: #1d4ed8;
+}
+
+.login-page p {
+  margin: 5px 0;
+  color: #475569;
+  font-size: 14px;
+  text-align: center;
+  line-height: 1.6;
+}
+
+.login-page a {
+  color: #2563eb;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.login-page a:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 480px) {
+  .login-page form {
+    padding: 25px 20px;
+  }
+
+  .login-page h1 {
+    font-size: 23px;
+  }
+}

@@ -12,6 +12,8 @@ function Navbar() {
         <Link to="/products">Products</Link>
         <Link to="/cart">Cart</Link>
         <Link to="/login">Login / Register</Link>
+        <Link to="/seller/login">Seller Login</Link>
+        <Link to="/admin/login">Admin Login</Link>
       </div>
     </nav>
   );

@@ -1,10 +1,14 @@
 import { Routes, Route } from "react-router-dom";
 
+import Home from "../pages/Home";
 import AuthPage from "../pages/AuthPage";
 import Products from "../pages/Products";
 import ProductDetails from "../pages/ProductDetails";
 import Payment from "../pages/payment";
+import PaymentSuccess from "../pages/paymentsuccess";;
 import ProductFilter from "../pages/Productfilter";
+import Cart from "../Cart";
+import Checkout from "../Checkout";
 
 // Admin
 import AdminLayout from "../components/admin/AdminLayout";
@@ -20,6 +24,7 @@ function AppRoutes() {
   return (
     <Routes>
 
+      <Route path="/" element={<Home />} />
       <Route path="/login" element={<AuthPage />} />
 
       {/* Existing Ecommerce routes */}
@@ -31,6 +36,9 @@ function AppRoutes() {
       />
 
       <Route path="/payment" element={<Payment />} />
+      <Route path="/payment-success" element={<PaymentSuccess />} />
+      <Route path="/cart" element={<Cart />} />
+      <Route path="/checkout" element={<Checkout />} />
 
       <Route path="/productfilter" element={<ProductFilter />} />
 

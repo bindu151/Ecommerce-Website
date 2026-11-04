@@ -8,7 +8,7 @@ function Products() {
       name: "Wireless Headphones",
       price: 1999,
       seller: "Tech Store",
-      image: "https://via.placeholder.com/250x200?text=Headphones",
+      image: "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=400",
     },
 
     {
@@ -16,7 +16,7 @@ function Products() {
       name: "Smart Watch",
       price: 2499,
       seller: "Digital World",
-      image: "https://via.placeholder.com/250x200?text=Smart+Watch",
+      image: "https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=400",
     },
 
     {
@@ -24,7 +24,7 @@ function Products() {
       name: "Laptop Backpack",
       price: 1299,
       seller: "Bag World",
-      image: "https://via.placeholder.com/250x200?text=Backpack",
+      image: "https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=400",
     },
 
     {
@@ -32,7 +32,7 @@ function Products() {
       name: "Bluetooth Speaker",
       price: 1599,
       seller: "Sound Hub",
-      image: "https://via.placeholder.com/250x200?text=Speaker",
+      image: "https://images.unsplash.com/photo-1608043152269-423dbba4e7e1?w=400",
     },
   ];
 

@@ -1,382 +1,380 @@
-/* ================================
+
+/* =================================
    PAYMENT PAGE
-================================ */
+================================= */
 
 .payment-page {
   min-height: 100vh;
-  background: skyblue;
-  padding: 30px 6%;
+  box-sizing: border-box;
+  padding: 35px 6%;
+  background: #f1f5f9;
   font-family: Arial, Helvetica, sans-serif;
   color: #212121;
 }
 
-/* Page heading */
-
 .payment-page > h1 {
   max-width: 1200px;
   margin: 0 auto 25px;
-  font-size: 28px;
-  font-weight: 600;
+  font-size: 30px;
+  font-weight: 700;
+  color: #172554;
 }
 
-
-/* ================================
-   MAIN CONTAINER
-================================ */
+/* =================================
+   MAIN LAYOUT
+================================= */
 
 .payment-container {
   max-width: 1200px;
-  margin: auto;
+  margin: 0 auto;
   display: grid;
-  grid-template-columns: 2fr 1fr;
-  gap: 20px;
+  grid-template-columns: minmax(0, 2fr) minmax(280px, 1fr);
+  gap: 25px;
   align-items: start;
 }
 
-
-/* ================================
+/* =================================
    PAYMENT BOX
-================================ */
+================================= */
 
 .payment-box {
-  background: #ffffff;
-  border-radius: 4px;
-  border: 1px solid #e0e0e0;
+  min-width: 0;
   overflow: hidden;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  box-shadow: 0 5px 18px rgba(15, 23, 42, 0.06);
 }
 
 .payment-box > h2 {
   margin: 0;
-  padding: 20px 25px;
-  border-bottom: 1px solid #eeeeee;
-  font-size: 20px;
-  font-weight: 600;
+  padding: 22px 25px;
+  border-bottom: 1px solid #e5e7eb;
+  font-size: 21px;
+  color: #1e293b;
 }
 
-
-/* ================================
-   PAYMENT METHODS
-================================ */
+/* =================================
+   PAYMENT METHOD OPTIONS
+================================= */
 
 .payment-method {
-  padding: 20px 25px;
+  padding: 24px;
 }
 
 .method-options {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 12px;
 }
 
 .method-options label {
   display: flex;
   align-items: center;
   gap: 12px;
-
   padding: 17px 18px;
-
   background: #ffffff;
-  border: 1px solid #dddddd;
-  border-radius: 4px;
-
+  border: 1px solid #dbe2ea;
+  border-radius: 9px;
   font-size: 16px;
-  font-weight: 500;
-
+  font-weight: 600;
+  color: #334155;
   cursor: pointer;
-  transition: 0.2s ease;
+  transition: border-color 0.2s, background 0.2s;
 }
 
 .method-options label:hover {
-  border-color: #2874f0;
-  background: #f8fbff;
+  border-color: #2563eb;
+  background: #eff6ff;
 }
 
 .method-options input {
-  width: 17px;
-  height: 17px;
-  accent-color: #2874f0;
+  width: 18px;
+  height: 18px;
+  margin: 0;
+  accent-color: #2563eb;
+  cursor: pointer;
 }
 
-
-/* ================================
+/* =================================
    PAYMENT FORM
-================================ */
+================================= */
 
 .payment-form {
-  margin-top: 20px;
+  margin-top: 24px;
 }
 
 .payment-option {
-  padding: 22px;
-  background: #fafafa;
-  border: 1px solid #e0e0e0;
-  border-radius: 4px;
+  padding: 24px;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
 }
 
 .payment-option h3 {
   margin: 0 0 20px;
-  font-size: 18px;
-  font-weight: 600;
+  font-size: 20px;
+  color: #1e293b;
 }
 
-
-/* Labels */
+/* Form labels */
 
 .payment-option label {
   display: block;
-  margin-bottom: 7px;
-  margin-top: 14px;
-
+  margin: 15px 0 8px;
   font-size: 14px;
   font-weight: 600;
-  color: #424242;
+  color: #334155;
 }
 
-
-/* Inputs */
+/* Form inputs and dropdowns */
 
 .payment-option input,
 .payment-option select {
+  display: block;
   width: 100%;
   box-sizing: border-box;
-
   padding: 13px 14px;
-
-  border: 1px solid #cfcfcf;
-  border-radius: 3px;
-
+  border: 1px solid #cbd5e1;
+  border-radius: 7px;
   background: #ffffff;
-
-  font-size: 14px;
+  color: #1e293b;
+  font-family: inherit;
+  font-size: 15px;
   outline: none;
-
-  transition: 0.2s;
+  transition: border-color 0.2s, box-shadow 0.2s;
 }
 
 .payment-option input:focus,
 .payment-option select:focus {
-  border-color: #2874f0;
-  box-shadow: 0 0 0 2px rgba(40, 116, 240, 0.08);
+  border-color: #2563eb;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.12);
 }
 
-
-/* ================================
+/* =================================
    PAYMENT BUTTON
-================================ */
+================================= */
 
 .payment-option button,
 .success-box button {
+  display: block;
   width: 100%;
-
+  box-sizing: border-box;
   margin-top: 22px;
-
   padding: 14px 20px;
-
   border: none;
-  border-radius: 3px;
-
-  background: #2874f0;
-  color: white;
-
-  font-size: 15px;
-  font-weight: 600;
-
+  border-radius: 8px;
+  background: #2563eb;
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: 700;
   cursor: pointer;
-
-  transition: 0.2s ease;
+  transition: background 0.2s, transform 0.2s;
 }
 
 .payment-option button:hover,
 .success-box button:hover {
-  background: #1769d3;
+  background: #1d4ed8;
 }
 
+.payment-option button:active,
+.success-box button:active {
+  transform: scale(0.98);
+}
 
-/* ================================
-   CARD DETAILS
-================================ */
+/* =================================
+   CARD PAYMENT ROW
+================================= */
 
 .card-row {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 15px;
 }
 
 .card-row > div {
   display: flex;
   flex-direction: column;
+  min-width: 0;
 }
 
-
-/* ================================
+/* =================================
    PAYMENT MESSAGE
-================================ */
+================================= */
 
 .payment-message {
-  margin-top: 15px;
-  padding: 12px;
-
-  border-radius: 3px;
-
-  background: #e8f5e9;
-  color: #1b5e20;
-
+  margin-top: 16px;
+  padding: 14px;
+  border: 1px solid #bbf7d0;
+  border-radius: 8px;
+  background: #f0fdf4;
+  color: #166534;
   font-size: 14px;
+  line-height: 1.6;
   font-weight: 600;
 }
 
-
-/* ================================
+/* =================================
    ORDER SUMMARY
-================================ */
+================================= */
 
 .order-summary {
-  background: #ffffff;
-
-  border: 1px solid #e0e0e0;
-  border-radius: 4px;
-
+  min-width: 0;
   overflow: hidden;
-
   position: sticky;
   top: 20px;
+  padding-bottom: 5px;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  box-shadow: 0 5px 18px rgba(15, 23, 42, 0.06);
 }
 
 .order-summary h2 {
   margin: 0;
-  padding: 20px;
-
-  border-bottom: 1px solid #eeeeee;
-
-  font-size: 18px;
-  color: #878787;
-
+  padding: 22px 20px;
+  border-bottom: 1px solid #e5e7eb;
+  font-size: 17px;
+  color: #64748b;
   text-transform: uppercase;
+  letter-spacing: 0.5px;
 }
 
 .order-summary p {
   display: flex;
   justify-content: space-between;
-
-  padding: 0 20px;
-
+  gap: 12px;
+  margin: 0;
+  padding: 15px 20px 0;
+  color: #475569;
   font-size: 15px;
-  color: #555;
 }
 
 .order-summary hr {
+  margin: 22px 20px;
   border: none;
-  border-top: 1px dashed #cccccc;
-  margin: 20px;
+  border-top: 1px dashed #cbd5e1;
 }
 
 .order-summary h3 {
   display: flex;
   justify-content: space-between;
-
+  gap: 12px;
   margin: 0;
   padding: 0 20px 22px;
-
+  color: #0f172a;
   font-size: 18px;
-  color: #212121;
 }
 
-
-/* ================================
-   COD
-================================ */
+/* =================================
+   COD INFORMATION
+================================= */
 
 .payment-option p {
-  color: #555;
-  line-height: 1.6;
+  color: #475569;
   font-size: 14px;
+  line-height: 1.7;
 }
 
-
-/* ================================
-   SUCCESS PAGE
-================================ */
+/* =================================
+   PAYMENT SUCCESS PAGE
+================================= */
 
 .success-page {
   min-height: 100vh;
-
+  box-sizing: border-box;
   display: flex;
   justify-content: center;
   align-items: center;
-
-  background: #f1f3f6;
-
-  padding: 30px;
+  padding: 30px 20px;
+  background: linear-gradient(135deg, #eff6ff, #f0fdf4);
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 .success-box {
-  width: 420px;
-  max-width: 100%;
-
-  padding: 45px 35px;
-
+  width: 100%;
+  max-width: 460px;
+  box-sizing: border-box;
+  padding: 42px 32px;
+  background: #ffffff;
   text-align: center;
-
-  background: white;
-
-  border-radius: 6px;
-
-  border: 1px solid #e0e0e0;
-
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  border: 1px solid #e2e8f0;
+  border-radius: 18px;
+  box-shadow: 0 12px 35px rgba(15, 23, 42, 0.1);
+  animation: successAppear 0.45s ease-out;
 }
 
 .success-icon {
-  width: 70px;
-  height: 70px;
-
-  margin: auto;
-
+  width: 86px;
+  height: 86px;
+  box-sizing: border-box;
   display: flex;
   justify-content: center;
   align-items: center;
-
+  margin: 0 auto 22px;
+  border: 5px solid #bbf7d0;
   border-radius: 50%;
-
-  background: #e8f5e9;
-  color: #2e7d32;
-
-  font-size: 42px;
-  font-weight: bold;
+  background: #dcfce7;
+  color: #15803d;
+  font-size: 48px;
+  font-weight: 700;
 }
 
 .success-box h1 {
-  margin: 20px 0 10px;
-
-  font-size: 25px;
+  margin: 0 0 15px;
+  color: #15803d;
+  font-size: 28px;
+  line-height: 1.3;
 }
 
 .success-box p {
-  color: #666;
-  font-size: 14px;
+  margin: 12px 0;
+  color: #64748b;
+  font-size: 15px;
+  line-height: 1.7;
 }
 
 .success-box strong {
-  color: #212121;
+  color: #1e293b;
 }
 
+.success-box button {
+  margin-top: 25px;
+  background: #15803d;
+}
 
-/* ================================
-   MOBILE RESPONSIVE
-================================ */
+.success-box button:hover {
+  background: #166534;
+}
+
+@keyframes successAppear {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* =================================
+   RESPONSIVE DESIGN
+================================= */
 
 @media (max-width: 768px) {
-
   .payment-page {
-    padding: 20px 12px;
+    padding: 24px 14px;
   }
 
   .payment-page > h1 {
-    font-size: 22px;
+    font-size: 25px;
   }
 
   .payment-container {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 18px;
   }
 
   .order-summary {
@@ -385,19 +383,38 @@
   }
 
   .payment-box > h2 {
-    padding: 17px;
-    font-size: 18px;
+    padding: 18px;
+    font-size: 19px;
   }
 
   .payment-method {
-    padding: 15px;
+    padding: 16px;
   }
 
   .payment-option {
-    padding: 17px;
+    padding: 18px;
   }
 
+  .success-box {
+    padding: 32px 22px;
+  }
+
+  .success-box h1 {
+    font-size: 24px;
+  }
+}
+
+@media (max-width: 480px) {
   .card-row {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .method-options label {
+    padding: 14px;
+    font-size: 15px;
+  }
+
+  .order-summary h3 {
+    font-size: 16px;
   }
 }

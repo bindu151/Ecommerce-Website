@@ -1,6 +1,8 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 function UPI() {
+  const navigate = useNavigate();
   const [upiId, setUpiId] = useState("");
   const [message, setMessage] = useState("");
 
@@ -12,7 +14,7 @@ function UPI() {
       return;
     }
 
-    setMessage("Payment successful! This is a demo payment.");
+    navigate("/payment-success");
   };
 
   return (

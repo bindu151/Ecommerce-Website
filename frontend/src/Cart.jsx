@@ -1,75 +1,80 @@
-import { useState } from 'react'
-import './Cart.css'
+import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
+import "./Cart.css";
 
-function Cart({ cartItems: initialCartItems = [], onCartChange, onCheckout }) {
-  const [cartItems, setCartItems] = useState(initialCartItems)
+function Cart({ onCartChange, onCheckout }) {
+  const navigate = useNavigate();
 
-  const updateCart = (updatedItems) => {
-    setCartItems(updatedItems)
+  const [cartItems, setCartItems] = useState(() => {
+    try {
+      return JSON.parse(localStorage.getItem("cartItems") || "[]");
+    } catch {
+      return [];
+    }
+  });
+
+  useEffect(() => {
+    localStorage.setItem("cartItems", JSON.stringify(cartItems));
 
     if (onCartChange) {
-      onCartChange(updatedItems)
+      onCartChange(cartItems);
     }
-  }
+  }, [cartItems]);
 
   const increaseQuantity = (id) => {
-    updateCart(
-      cartItems.map((item) =>
+    setCartItems((items) =>
+      items.map((item) =>
         item.id === id
-          ? { ...item, quantity: item.quantity + 1 }
+          ? { ...item, quantity: (Number(item.quantity) || 1) + 1 }
           : item
       )
-    )
-  }
+    );
+  };
 
   const decreaseQuantity = (id) => {
-    updateCart(
-      cartItems
+    setCartItems((items) =>
+      items
         .map((item) =>
           item.id === id
-            ? { ...item, quantity: item.quantity - 1 }
+            ? { ...item, quantity: (Number(item.quantity) || 1) - 1 }
             : item
         )
         .filter((item) => item.quantity > 0)
-    )
-  }
+    );
+  };
 
   const removeItem = (id) => {
-    updateCart(
-      cartItems.filter((item) => item.id !== id)
-    )
-  }
+    setCartItems((items) => items.filter((item) => item.id !== id));
+  };
 
   const subtotal = cartItems.reduce(
-    (total, item) => total + item.price * item.quantity,
+    (sum, item) => sum + Number(item.price) * Number(item.quantity || 1),
     0
-  )
+  );
 
-  const deliveryCharge = subtotal > 0 ? 50 : 0
-  const total = subtotal + deliveryCharge
+  const deliveryCharge = subtotal > 0 ? 50 : 0;
+  const total = subtotal + deliveryCharge;
 
   const handleCheckout = () => {
+    if (cartItems.length === 0) return;
+
     if (onCheckout) {
-      onCheckout({
-        items: cartItems,
-        subtotal,
-        deliveryCharge,
-        total,
-      })
+      onCheckout({ items: cartItems, subtotal, deliveryCharge, total });
+    } else {
+      navigate("/checkout");
     }
-  }
+  };
 
   return (
     <div className="cart-page">
       <div className="cart-container">
-
         <div className="cart-header">
           <h1>Shopping Cart</h1>
           <p>
             {cartItems.reduce(
-              (total, item) => total + item.quantity,
+              (sum, item) => sum + Number(item.quantity || 1),
               0
-            )}{' '}
+            )}{" "}
             item(s) in your cart
           </p>
         </div>
@@ -79,14 +84,15 @@ function Cart({ cartItems: initialCartItems = [], onCartChange, onCheckout }) {
             <div className="empty-cart-icon">🛒</div>
             <h2>Your cart is empty</h2>
             <p>Add some products to your cart to continue shopping.</p>
+            <button type="button" onClick={() => navigate("/products")}>
+              Continue Shopping
+            </button>
           </div>
         ) : (
           <div className="cart-layout">
-
             <div className="cart-items">
               {cartItems.map((item) => (
                 <div className="cart-item" key={item.id}>
-
                   <img
                     src={item.image}
                     alt={item.name}
@@ -96,13 +102,12 @@ function Cart({ cartItems: initialCartItems = [], onCartChange, onCheckout }) {
                   <div className="cart-product-info">
                     <h2>{item.name}</h2>
                     <p className="cart-price">
-                      ₹{item.price.toLocaleString('en-IN')}
+                      ₹{Number(item.price).toLocaleString("en-IN")}
                     </p>
                   </div>
 
                   <div className="quantity-section">
                     <span>Quantity</span>
-
                     <div className="quantity-controls">
                       <button
                         type="button"
@@ -110,9 +115,7 @@ function Cart({ cartItems: initialCartItems = [], onCartChange, onCheckout }) {
                       >
                         −
                       </button>
-
-                      <span>{item.quantity}</span>
-
+                      <span>{item.quantity || 1}</span>
                       <button
                         type="button"
                         onClick={() => increaseQuantity(item.id)}
@@ -123,7 +126,10 @@ function Cart({ cartItems: initialCartItems = [], onCartChange, onCheckout }) {
                   </div>
 
                   <div className="item-total">
-                    ₹{(item.price * item.quantity).toLocaleString('en-IN')}
+                    ₹
+                    {(
+                      Number(item.price) * Number(item.quantity || 1)
+                    ).toLocaleString("en-IN")}
                   </div>
 
                   <button
@@ -133,7 +139,6 @@ function Cart({ cartItems: initialCartItems = [], onCartChange, onCheckout }) {
                   >
                     Remove
                   </button>
-
                 </div>
               ))}
             </div>
@@ -143,19 +148,19 @@ function Cart({ cartItems: initialCartItems = [], onCartChange, onCheckout }) {
 
               <div className="summary-row">
                 <span>Subtotal</span>
-                <span>₹{subtotal.toLocaleString('en-IN')}</span>
+                <span>₹{subtotal.toLocaleString("en-IN")}</span>
               </div>
 
               <div className="summary-row">
                 <span>Delivery</span>
-                <span>₹{deliveryCharge.toLocaleString('en-IN')}</span>
+                <span>₹{deliveryCharge.toLocaleString("en-IN")}</span>
               </div>
 
               <hr />
 
               <div className="summary-total">
                 <span>Total</span>
-                <span>₹{total.toLocaleString('en-IN')}</span>
+                <span>₹{total.toLocaleString("en-IN")}</span>
               </div>
 
               <button
@@ -166,13 +171,11 @@ function Cart({ cartItems: initialCartItems = [], onCartChange, onCheckout }) {
                 Proceed to Checkout
               </button>
             </div>
-
           </div>
         )}
-
       </div>
     </div>
-  )
+  );
 }
 
-export default Cart
+export default Cart;

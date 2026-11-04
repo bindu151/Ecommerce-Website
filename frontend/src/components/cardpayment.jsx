@@ -1,6 +1,8 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 function CardPayment() {
+  const navigate = useNavigate();
   const [cardNumber, setCardNumber] = useState("");
   const [name, setName] = useState("");
   const [expiry, setExpiry] = useState("");
@@ -15,7 +17,7 @@ function CardPayment() {
       return;
     }
 
-    setMessage("Payment successful! This is a demo payment.");
+    navigate("/payment-success");
   };
 
   return (

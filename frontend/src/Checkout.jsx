@@ -1,10 +1,24 @@
 import { useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 import './Checkout.css'
 
+
 function Checkout({
-  cartItems = [],
+  cartItems: providedCartItems,
   onContinueToPayment,
 }) {
+  const navigate = useNavigate();
+
+  const [savedCartItems, setSavedCartItems] = useState(() => {
+    try {
+      return JSON.parse(localStorage.getItem("cartItems") || "[]");
+    } catch {
+      return [];
+    }
+  });
+
+  const cartItems = providedCartItems ?? savedCartItems;
+
   const [formData, setFormData] = useState({
     fullName: '',
     phone: '',
@@ -117,10 +131,16 @@ function Checkout({
 
       total,
     }
+localStorage.setItem(
+  'checkoutData',
+  JSON.stringify(checkoutData)
+)
 
-    if (onContinueToPayment) {
-      onContinueToPayment(checkoutData)
-    }
+if (onContinueToPayment) {
+  onContinueToPayment(checkoutData)
+} else {
+  navigate('/payment')
+}
   }
 
   return (

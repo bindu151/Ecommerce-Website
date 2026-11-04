@@ -1,11 +1,13 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 function COD() {
+  const navigate = useNavigate();
   const [message, setMessage] = useState("");
 
   const handleCOD = () => {
-    setMessage("Cash on Delivery selected successfully!");
-  };
+  navigate("/payment-success");
+};
 
   return (
     <div className="payment-option">

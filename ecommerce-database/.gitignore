@@ -1,0 +1,10 @@
+# MySQL / database files
+*.log
+
+# IDE files
+.vscode/
+.idea/
+
+# Operating system files
+.DS_Store
+Thumbs.db

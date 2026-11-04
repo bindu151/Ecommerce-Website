@@ -1,0 +1,9 @@
+USE ecommerce_db;
+
+SELECT
+    TABLE_NAME,
+    TABLE_ROWS
+FROM information_schema.TABLES
+WHERE TABLE_SCHEMA = 'ecommerce_db'
+  AND TABLE_TYPE = 'BASE TABLE'
+ORDER BY TABLE_NAME;
